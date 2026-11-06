@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --page-bg: #f2f6fc;
+  --white: #ffffff;
+  --dark: #183653;
+  --blue: #27689d;
+  --blue-dark: #17466f;
+  --blue-soft: #e5f0fb;
+  --text: #647789;
+  --border: #dce7f1;
+  --pale-blue: #eaf3fc;
+  --shadow: 0 12px 35px rgba(25, 65, 105, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: var(--dark);
+  background: var(--page-bg);
+  line-height: 1.7;
+}
+
+/* ================= NAVIGASI ATAS ================= */
+
+.nav {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  min-height: 48px;
+  margin: 14px auto 42px;
+  padding: 8px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  box-shadow: 0 5px 18px rgba(25, 65, 105, 0.09);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--dark);
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.logo-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a,
+.nav-dropdown a {
+  color: #344f68;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-dropdown a:hover {
+  color: var(--blue);
+}
+
+.hamburger {
+  display: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 5px;
+  background: var(--dark);
+}
+
+.nav-dropdown {
+  display: none;
+}
+
+/* ================= AREA UTAMA ================= */
+
+.container {
+  width: min(558px, calc(100% - 36px));
+  margin: 0 auto;
+  padding-bottom: 38px;
+}
+
+.title {
+  position: relative;
+  margin: 0 0 40px;
+  color: var(--dark);
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+  text-align: center;
+  font-weight: 800;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -17px;
+  width: 44px;
+  height: 4px;
+  border-radius: 10px;
+  background: #8bb8df;
+  transform: translateX(-50%);
+}
+
+/* ================= FOTO PRODUK ================= */
+
+.pc-img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  padding: 5px;
+  margin: 0 auto 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* ================= KONTEN PRODUK ================= */
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pc-intro,
+.pc-card,
+.pc-price,
+.pc-takeaway {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  box-shadow: 0 8px 25px rgba(25, 65, 105, 0.04);
+}
+
+.pc-intro {
+  padding: 27px 31px 30px;
+}
+
+.pc-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--blue);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.pc-intro h2,
+.pc-card h2,
+.pc-price h2 {
+  margin-bottom: 9px;
+  color: var(--blue-dark);
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.pc-intro p,
+.pc-price p,
+.pc-takeaway p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ================= ALAT, BAHAN, DAN LANGKAH ================= */
+
+/* Satu kolom agar Alat dan Bahan serta Langkah Pembuatan
+   sama-sama tampil memanjang seperti contoh. */
+.pc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 13px;
+  width: 100%;
+}
+
+.pc-card {
+  width: 100%;
+  min-width: 0;
+  padding: 18px 20px 20px;
+}
+
+.pc-card > h2 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.pc-card > .pc-eyebrow {
+  margin-bottom: 6px;
+}
+
+.pc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pc-list li {
+  position: relative;
+  margin: 0 0 8px;
+  padding-left: 19px;
+  color: var(--text);
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+
+.pc-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pc-list:not(.numbered) li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* LANGKAH PEMBUATAN */
+.pc-card:has(.numbered) {
+  grid-column: 1 / -1;
+  padding: 18px 20px 20px;
+}
+
+.pc-card:has(.numbered) .pc-eyebrow {
+  margin-bottom: 5px;
+}
+
+.pc-card:has(.numbered) h2 {
+  margin-bottom: 8px;
+}
+
+.pc-list.numbered {
+  counter-reset: langkah;
+}
+
+.pc-list.numbered li {
+  counter-increment: langkah;
+  margin-bottom: 6px;
+  padding-left: 33px;
+  font-size: 12px !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+.pc-list.numbered li::before {
+  content: counter(langkah);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-dark);
+  background: var(--blue-soft);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ================= ESTIMASI BIAYA ================= */
+
+.product-content > .pc-price {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eaf0f6;
+}
+
+.pc-price .pc-eyebrow,
+.pc-price h2,
+.pc-price p {
+  min-width: 0;
+  padding-left: 25px !important;
+}
+
+.pc-price .pc-eyebrow {
+  color: var(--blue);
+}
+
+.pc-price h2 {
+  margin-bottom: 10px;
+  color: var(--blue-dark);
+  font-size: 20px;
+}
+
+.pc-price p {
+  color: var(--text);
+  font-size: 12.5px;
+}
+
+.pc-price dl {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 13px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.pc-price dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid #eaf0f6;
+}
+
+.pc-price dl > div:last-child {
+  border-bottom: 0;
+}
+
+.pc-price dt {
+  min-width: 0;
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.pc-price dd {
+  flex-shrink: 0;
+  color: var(--blue-dark);
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ================= CATATAN PENUTUP ================= */
+
+.pc-takeaway {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 15px 17px;
+  background: #f9fbfe;
+  box-shadow: none;
+}
+
+.pc-takeaway i {
+  margin-top: 4px;
+  color: var(--blue);
+  font-size: 14px;
+}
+
+.pc-takeaway p {
+  font-size: 12px;
+}
+
+/* ================= TOMBOL KEMBALI ================= */
+
+.btn-back {
+  display: table;
+  margin: 20px auto 0;
+  padding: 10px 19px;
+  color: var(--white);
+  background: var(--blue);
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-back:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  margin-top: 25px;
+  padding: 38px 20px 16px;
+  color: #eaf3fb;
+  background: #183653;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.2fr;
+  gap: 35px;
+  width: min(1050px, 100%);
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.footer h3,
+.footer h4 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.footer h3 {
+  font-size: 17px;
+}
+
+.footer h4 {
+  font-size: 14px;
+}
+
+.footer p,
+.footer h5 {
+  color: #c8d9e9;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.member-footer {
+  margin-bottom: 13px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.social-icons a,
+.footer-contact a {
+  color: #dceafa;
+  text-decoration: none;
+}
+
+.social-icons a:hover,
+.footer-contact a:hover {
+  color: #91c5f0;
+}
+
+.footer-contact p {
+  margin-bottom: 8px;
+}
+
+.footer-contact i {
+  width: 20px;
+  color: #91c5f0;
+}
+
+.footer-bottom {
+  width: min(1050px, 100%);
+  margin: 25px auto 0;
+  padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+/* ================= RESPONSIVE TABLET DAN HP ================= */
+
+@media (max-width: 600px) {
+  .nav {
+    width: calc(100% - 28px);
+    justify-content: space-between;
+    gap: 12px;
+    margin: 12px auto 32px;
+    padding: 9px 15px;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .logo {
+    font-size: 12px;
+  }
+
+  .logo-img {
+    width: 19px;
+    height: 19px;
+  }
+
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .title {
+    margin-bottom: 34px;
+    font-size: 32px;
+    letter-spacing: -1.3px;
+  }
+
+  .pc-img {
+    height: 270px;
+    margin-bottom: 17px;
+    border-radius: 16px;
+  }
+
+  .pc-intro {
+    padding: 21px;
+  }
+
+  .pc-intro h2 {
+    font-size: 17px;
+  }
+
+  .pc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-price,
+  .product-content > .pc-price {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .pc-price dd {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav {
+    gap: 8px;
+    padding: 8px 11px;
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+  }
+
+  .logo {
+    font-size: 11px;
+  }
+
+  .pc-img {
+    height: 230px;
+  }
+
+  .pc-price dl > div {
+    gap: 6px;
+  }
+
+  .pc-price dt,
+  .pc-price dd {
+    font-size: 10px;
+  }
+}
+
+
+/* Penyesuaian khusus halaman rak serbaguna dari casing CPU */
+.pc-img {
+  object-position: center;
+}
+
+.pc-price dl {
+  overflow: hidden;
+}
+
+.pc-price dt {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .pc-img {
+    height: 270px;
+  }
+}
